@@ -1,0 +1,44 @@
+name: base_module
+description: 这是一个提供基础结构和代码的Flutter种子工程.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_swiper_view: ^1.1.8
+  dio: ^4.0.6
+  flutter_screenutil: ^5.7.0
+  pretty_dio_logger: ^1.1.1
+  flutter_easyloading: ^3.0.3
+  connectivity: ^3.0.6
+  get: ^4.6.5
+  bruno: ^3.2.0
+  fluttertoast: ^8.2.2
+  logger: ^1.4.0
+  sentry_flutter: ^7.8.0
+  flex_color_scheme: ^7.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add Flutter specific assets to your application, add an assets section,
+  # like this:
+  assets:
+    - assets/images/placeholder/
+    - assets/images/station/
+
+  module:
+    androidX: true
+    androidPackage: com.example.base_module
+    iosBundleIdentifier: com.example.workOrderModule

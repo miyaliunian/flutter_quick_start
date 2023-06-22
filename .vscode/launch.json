@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "develop",
+             "cwd": "base_module",
+            "request": "launch",
+            "program": "./lib/main.dart",
+            "type": "dart"
+        },
+        {
+            "name": "profile",
+            "cwd": "base_module",
+            "request": "launch",
+            "type": "dart",
+           "program": "./lib/main.dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "release:sit",
+            "cwd": "base_module",
+            "request": "launch",
+            "type": "dart",
+            "program": "./lib/main.dart",
+            "flutterMode": "release"
+        }
+    ]
+}
