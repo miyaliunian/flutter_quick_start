@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:get/get.dart';
 import 'package:base_module/app/modules/station/controllers/station_controller.dart';
-import '/widget/image_loader.dart';
+import '../../../../imageLoader/image_loader.dart';
 
 class StationPage extends GetView<StationController> {
   const StationPage({super.key, required this.title});

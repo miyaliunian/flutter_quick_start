@@ -1,23 +1,22 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:base_module/utils/app_logger.dart';
+import 'package:base_module/appLogger/app_logger.dart';
 import 'app_config.dart';
 
 class App extends StatelessWidget {
   final String initialRoute;
   final List<GetPage> getPages;
   final GetPage unknownRoute;
-  final Bindings initialBinding;
+  final Bindings? initialBinding;
 
   const App({
     super.key,
     required this.initialRoute,
     required this.getPages,
     required this.unknownRoute,
-    required this.initialBinding,
+    this.initialBinding,
   });
 
   @override

@@ -2,6 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "flutter_seed",
+            "cwd": "flutter_seed",
+            "request": "launch",
+            "program": "./lib/main.dart",
+            "type": "dart",
+        },
+        {
             "name": "develop",
              "cwd": "base_module",
             "request": "launch",

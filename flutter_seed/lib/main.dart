@@ -1,51 +1,25 @@
-import 'dart:async';
-
+import 'package:base_module/config/app.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:base_module/config/app_config.dart';
-import 'package:base_module/constant/constants.dart';
-import 'package:base_module/routes/app_pages.dart';
-import 'package:base_module/utils/app_logger.dart';
-import 'config/app.dart';
-import 'page/getx/helper/init_dependencies.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:flutter_seed/constant/constants.dart';
+import 'package:flutter_seed/page/getx/helper/init_dependencies.dart';
+import 'package:flutter_seed/routes/app_pages.dart';
+import 'package:base_module/startApp/start_app.dart';
 
 void main() {
-  runZonedGuarded<Future<void>>(() async {
-    await initializeApp();
-  }, (error, stackTrace) async {
-    await Sentry.captureException(
-      error,
-      stackTrace: stackTrace,
-    );
-  }, zoneSpecification: ZoneSpecification(
-    print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
-      parent.print(zone, "mobje_prod: $line");
-    },
-  ));
-}
-
-Future<void> initializeApp() async {
-  await SentryFlutter.init((option) {
-    option.dsn = AppConfig.SENTRY_KEY;
-  }, appRunner: runAppAndSetup);
-}
-
-void runAppAndSetup() {
-  FlutterError.onError = (FlutterErrorDetails details) async {
-    Zone.current.handleUncaughtError(details.exception, details.stack!);
-  };
-  AppLogger.init();
-  runApp(AppConfig(
-      baseUrl: Constants.API_BASE_URL,
-      theme: _buildThemeData(),
-      darTheme: _buildDarkTheme(),
-      child: App(
-        initialRoute: AppPages.INITIAL,
-        getPages: AppPages.routes,
-        unknownRoute: AppPages.unknownRoute,
-        initialBinding: InitDepend(),
-      )));
+  StartApp(
+    logPrefix: "mobje-dev",
+    baseUrl: Constants.API_BASE_URL,
+    sentryDsn: Constants.SENTRY_DSN,
+    theme: _buildThemeData(),
+    darkTheme: _buildDarkTheme(),
+    child: App(
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+      unknownRoute: AppPages.unknownRoute,
+      initialBinding: InitDepend(),
+    ),
+  ).run();
 }
 
 ThemeData _buildThemeData() {

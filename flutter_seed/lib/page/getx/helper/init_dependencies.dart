@@ -1,7 +1,7 @@
+import 'package:flutter_seed/page/getx/controllers/list_controller.dart';
+import 'package:flutter_seed/page/getx/controllers/tap_controller.dart';
 import 'package:get/get.dart';
-import 'package:base_module/appLogger/app_logger.dart';
-import '../controllers/list_controller.dart';
-import '../controllers/tap_controller.dart';
+import 'package:base_module/utils/app_logger.dart';
 
 class InitDepend implements Bindings {
   @override

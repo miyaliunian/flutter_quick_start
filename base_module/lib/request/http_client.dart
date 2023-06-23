@@ -1,9 +1,9 @@
+library http_client;
+
 import 'dart:convert';
 
-import 'package:bruno/bruno.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:base_module/request/exception/http_exception.dart';
