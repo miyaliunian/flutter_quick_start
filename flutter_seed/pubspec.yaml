@@ -12,6 +12,8 @@ dependencies:
   get: ^4.6.5  
   flex_color_scheme: ^7.0.5
   sentry_flutter: ^7.8.0  
+  path: ^1.8.1
+  glob: ^2.1.2
   base_module:
     path: '../base_module'
 

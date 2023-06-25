@@ -51,7 +51,12 @@ class StartApp {
 
   void runAppAndSetup() {
     FlutterError.onError = (FlutterErrorDetails details) async {
-      Zone.current.handleUncaughtError(details.exception, details.stack!);
+      if (kReleaseMode) {
+        Zone.current.handleUncaughtError(details.exception, details.stack!);
+      } else {
+        FlutterError.dumpErrorToConsole(
+            FlutterErrorDetails(exception: details));
+      }
     };
     AppLogger.init();
     runApp(AppConfig(

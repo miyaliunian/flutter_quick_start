@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter_seed/page/getx/counter_page.dart';
 import 'package:flutter_seed/page/notfound/index.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+
 
 part 'app_routes.dart';
 
@@ -12,9 +15,11 @@ class AppPages {
 
 // 业务路由
   static final routes = [
+    // getRouteFiles(),
     GetPage(
       name: AppRoutes.countPage,
       page: () => const CounterPage(),
     ),
   ];
 }
+
